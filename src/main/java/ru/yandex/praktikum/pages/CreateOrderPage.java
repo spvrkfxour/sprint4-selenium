@@ -55,11 +55,11 @@ public class CreateOrderPage {
     private final By phoneErrorMessage = By.xpath(".//input[@placeholder='* Телефон: на него позвонит курьер']//parent::div//*[@class='Input_ErrorMessage__3HvIb Input_Visible___syz6']");
     //Список со сроком аренды
     private final String termValuePattern = ".//*[@class='Dropdown-menu']//div[text()='%s']";
+    //Список со станциями
+    private final String metroValuePattern = ".//*[@class='select-search__options']//*[@data-index='%d']";
 
     //Каждой станции соответствует значение от 0 до 224, data-value отличается от data-index начиная с 79 data-index
     public By getMetroValue(int index) {
-        //Список со станциями
-        String metroValuePattern = ".//*[@class='select-search__options']//*[@data-index='%d']";
         return By.xpath(String.format(metroValuePattern, index));
     }
 
