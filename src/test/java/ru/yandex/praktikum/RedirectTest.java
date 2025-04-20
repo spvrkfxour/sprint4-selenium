@@ -34,7 +34,7 @@ public class RedirectTest {
     }
 
     @Test
-    public void checkLogoScooterRedirect() {
+    public void logoScooterRedirectTest() {
         mainPage.clickButtonOrderHeader();
         mainPage.clickScooterLogo();
         String currentUrl = driver.getCurrentUrl();
@@ -42,14 +42,14 @@ public class RedirectTest {
     }
 
     @Test
-    public void checkLogoYandexRedirect() {
+    public void logoYandexRedirectTest() {
         mainPage.clickYandexLogo();
         String currentUrl = driver.getCurrentUrl();
         assertThat("Главная страница Яндекса не открылась", currentUrl, containsString("ya.ru"));
     }
 
     @Test
-    public void checkErrorOrder() {
+    public void errorOrderTest() {
         mainPage.clickOnStatus();
         mainPage.enterOrderId("1234");
         mainPage.clickOnGo();

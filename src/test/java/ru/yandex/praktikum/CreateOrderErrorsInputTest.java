@@ -34,7 +34,7 @@ public class CreateOrderErrorsInputTest {
 
     @Test
     //Проверка появления ошибок на экране "Для кого самокат" и текст ошибок для поля "Имя"
-    public void checkNameError() {
+    public void nameErrorTest() {
         createOrderPage.clickButtonCreateOrderNextInput();
         assertTrue("Нет текста ошибки при пустом поле", createOrderPage.isNameErrorMessageDisplayed());
         assertThat("Текст ошибки в поле \"Имя\" неверный", createOrderPage.actualNameErrorText(), equalTo(ErrorsInputText.NAME_ERROR));
@@ -42,7 +42,7 @@ public class CreateOrderErrorsInputTest {
 
     @Test
     //Проверка появления ошибок на экране "Для кого самокат" и текст ошибок для поля "Фамилия"
-    public void checkLastnameError() {
+    public void lastnameErrorTest() {
         createOrderPage.clickButtonCreateOrderNextInput();
         assertTrue("Нет текста ошибки при пустом поле", createOrderPage.isLastnameErrorMessageDisplayed());
         assertThat("Текст ошибки в поле \"Фамилия\" неверный", createOrderPage.actualLastnameErrorText(), equalTo(ErrorsInputText.LASTNAME_ERROR));
@@ -50,7 +50,7 @@ public class CreateOrderErrorsInputTest {
 
     @Test
     //Проверка появления ошибок на экране "Для кого самокат" и текст ошибок для поля "Адрес"
-    public void checkAddressError() {
+    public void addressErrorTest() {
         createOrderPage.enterAddressValues("error");
         createOrderPage.clickButtonCreateOrderNextInput();
         assertTrue("Нет текста ошибки при некорректно заполненном поле", createOrderPage.isAddressErrorMessageDisplayed());
@@ -59,7 +59,7 @@ public class CreateOrderErrorsInputTest {
 
     @Test
     //Проверка появления ошибок на экране "Для кого самокат" и текст ошибок для поля "Метро"
-    public void checkMetroError() {
+    public void metroErrorTest() {
         createOrderPage.clickButtonCreateOrderNextInput();
         assertTrue("Нет текста ошибки при пустом поле", createOrderPage.isMetroErrorMessageDisplayed());
         assertThat("Текст ошибки в поле \"Метро\" неверный", createOrderPage.actualMetroErrorText(), equalTo(ErrorsInputText.METRO_ERROR));
@@ -67,15 +67,9 @@ public class CreateOrderErrorsInputTest {
 
     @Test
     //Проверка появления ошибок на экране "Для кого самокат" и текст ошибок для поля "Телефон"
-    public void checkPhoneError() {
+    public void phoneErrorTest() {
         createOrderPage.clickButtonCreateOrderNextInput();
         assertTrue("Нет текста ошибки при пустом поле", createOrderPage.isPhoneErrorMessageDisplayed());
         assertThat("Текст ошибки в поле \"Телефон\" неверный", createOrderPage.actualPhoneErrorText(), equalTo(ErrorsInputText.PHONE_ERROR));
     }
-
-    /*
-    public void checkDateError()
-    public void checkTermError()
-    В дереве нет ошибок для обязательных полей "Дата заказа" и "Срок аренды"
-     */
 }

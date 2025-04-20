@@ -40,22 +40,21 @@ public class MainPageAccordionTest {
     @Parameterized.Parameters(name = "accordionNumber = {0}, expectedText = {1}")
     public static Object[][] data() {
         return new Object[][]{
-                {0, AccordionText.ACCORDION_TEXT_0},
-                {1, AccordionText.ACCORDION_TEXT_1},
-                {2, AccordionText.ACCORDION_TEXT_2},
-                {3, AccordionText.ACCORDION_TEXT_3},
-                {4, AccordionText.ACCORDION_TEXT_4},
-                {5, AccordionText.ACCORDION_TEXT_5},
-                {6, AccordionText.ACCORDION_TEXT_6},
-                {7, AccordionText.ACCORDION_TEXT_7}
+                {0, AccordionText.ANSWER_SCOOTER_COST},
+                {1, AccordionText.ANSWER_SEVERAL_SCOOTER_ORDER},
+                {2, AccordionText.ANSWER_RENT_TIME},
+                {3, AccordionText.ANSWER_SCOOTER_ORDER_TODAY},
+                {4, AccordionText.ANSWER_RENT_TIME_EXTEND_OR_REDUCE},
+                {5, AccordionText.ANSWER_SCOOTER_ORDER_CHARGER},
+                {6, AccordionText.ANSWER_CANCEL_ORDER},
+                {7, AccordionText.ANSWER_SCOOTER_ORDER_AREA}
         };
     }
 
     @Test
     //Проверка, что текст внутри раскрывающего списка соответствует тексту из требований(класс AccordionText)
-    public void checkAccordionText() {
+    public void accordionTextTest() {
         mainPage.acceptCookies();
-        //Assert.assertEquals("Текст в раскрывающем списке отличается",expectedText, mainPage.actualAccordionText(accordionNumber));
         assertThat("Текст в раскрывающемся списке неверный", mainPage.actualAccordionText(accordionNumber), equalTo(expectedText));
     }
 }

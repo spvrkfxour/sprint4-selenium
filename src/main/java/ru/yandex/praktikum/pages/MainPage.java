@@ -33,16 +33,18 @@ public class MainPage {
     private final By buttonStatus = By.className("Header_Link__1TAG7");
     //Поле ввода номера заказа
     private final By inputOrderId = By.className("Input_Input__1iN_Z");
+    //Раскрывающиеся списки "Вопросы о важном"
+    private final String accordionHeaderPattern = "accordion__heading-%d";
+    //Элементы внутри раскрывающихся списков "Вопросы о важном"
+    private final String accordionPanelPattern = ".//*[@id='accordion__panel-%d']//p";
 
     //Получение элемента раскрывающего списка по его номеру
     public By getAccordionHeader(int index) {
-        String accordionHeaderPattern = "accordion__heading-%d";
         return By.id(String.format(accordionHeaderPattern, index));
     }
 
     //Получение элемента с текстом внутри раскрывающего списка по его номеру
     public By getAccordionPanelText(int index) {
-        String accordionPanelPattern = ".//*[@id='accordion__panel-%d']//p";
         return By.xpath(String.format(accordionPanelPattern, index));
     }
 

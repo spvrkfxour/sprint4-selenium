@@ -88,7 +88,7 @@ public class CreateOrderTest {
 
     @Test
     //Проверка создания заказа
-    public void checkCreateOrder() {
+    public void createOrderTest() {
         mainPage.acceptCookies();
         //От значения HEADER или FOOTER типа EntryPoint определяется вход в сценарий создания заказа
         switch (entryPoint) {
@@ -102,8 +102,6 @@ public class CreateOrderTest {
         //Заполнение формы
         createOrderPage.createOrder(nameValue, lastnameValue, addressValue,
                 metroValue, phoneValue, dateValue, termValue, colorsValue, commentValue);
-        //Сравниваем текст в элементе с классом Order_ModalHeader__3FDaJ, элемент при оформлении заказа не меняется, меняется только текст
-        //Assert.assertEquals("Заказ не был оформлен","Заказ оформлен", createOrderPage.successCreateOrderText());
         assertThat("Заказ не был оформлен", createOrderPage.successCreateOrderText(), containsString("Заказ оформлен"));
     }
 }

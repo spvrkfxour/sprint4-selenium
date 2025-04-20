@@ -53,6 +53,8 @@ public class CreateOrderPage {
     private final By metroErrorMessage = By.className("Order_MetroError__1BtZb");
     //Сообщение об ошибке в поле "Телефон"
     private final By phoneErrorMessage = By.xpath(".//input[@placeholder='* Телефон: на него позвонит курьер']//parent::div//*[@class='Input_ErrorMessage__3HvIb Input_Visible___syz6']");
+    //Список со сроком аренды
+    private final String termValuePattern = ".//*[@class='Dropdown-menu']//div[text()='%s']";
 
     //Каждой станции соответствует значение от 0 до 224, data-value отличается от data-index начиная с 79 data-index
     public By getMetroValue(int index) {
@@ -63,8 +65,6 @@ public class CreateOrderPage {
 
     //Выбор срока аренды, где срок аренды = termValue
     public By getTermValue(String termValue) {
-        //Список со сроком аренды
-        String termValuePattern = ".//*[@class='Dropdown-menu']//div[text()='%s']";
         return By.xpath(String.format(termValuePattern, termValue));
     }
 
